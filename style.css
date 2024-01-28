@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+:root {
+    --primarycolor: #216155;
+    --secondarycolor: #2D9596;
+    --tertiarycolor: #092635; /* Correction de la variable --tertirycolor à --tertiarycolor */
+    --bg: #EEEEEE;
+}
+
+/* GENERAL */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--primarycolor);
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--secondarycolor);
+}
+
+h3 {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--secondarycolor);
+    margin: 5px 0;
+}
+
+p {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--tertiarycolor); /* Correction de la variable --tertirycolor à --tertiarycolor */
+    margin: 2% 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: var(--secondarycolor);
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--primarycolor);
+ }
+
+button {
+    border: none;
+    background-color: var(--secondarycolor);
+    color: white;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 7%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.spaceAround {
+    justify-content: space-around;
+}
+
+/* HEADER */
+
+header {
+    padding: 2% 15%;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px var(--bg);
+}
+
+header img {
+    width: 20%;
+}
+
+header nav {
+    width: 50%;
+}
+
+header nav div {
+    width: 100%;
+}
+
+/* -- burger --*/
+/* Masquage de la case à cocher */
+input.burger {
+    display: none;
+  }
+
+/* masquage label */
+.burger-label{
+    display: none;
+}
+  
+  /* Création des trois traits du bouton de menu */
+  .burger-label {
+    width: 30px;
+    height: 30px;
+    margin: 10px auto 10px;
+    cursor: pointer;
+  }
+  .burger-label span, 
+  .burger-label::before, 
+  .burger-label::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--primarycolor);
+    border-radius: 10px;
+  }
+/* HERO */
+.hero {
+    width: 100vw;
+    background-image: url('https://images.unsplash.com/photo-1483794344563-d27a8d18014e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    height: 60vh;
+    background-position: center;
+    align-content: center;
+}
+
+.hero h1 {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.hero p {
+    width: 50%;
+    font-size: 1.2rem;
+    margin-left: 15%;
+}
+
+/* MAIN */
+
+main {
+    padding: 0 15%;
+    align-items: flex-start;
+    margin-top: 5%;
+}
+
+/* SECTION */
+
+section {
+    width: 70%;
+    align-items: flex-start;
+}
+
+.card {
+    width: 40%;
+    border-radius: 5px;
+    background-color: var(--bg);
+    margin-bottom: 7%;
+}
+
+section div img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.descriptif {
+    width: 90%;
+    margin: auto;
+}
+
+/* ASIDE */
+aside {
+    width: 15%;
+    background-color: #216155;
+    padding: 2% 5%;
+    background-color: var(--bg);
+    border-radius: 5px;
+}
+
+
+/* FOOTER */ 
+
+footer {
+    background-color: var(--bg);
+    padding: 2% 15%;
+}
+
+footer div {
+    width: 25%;
+}
+
+footer div img {
+    width: 80%;
+}
+
+footer div p span {
+    font-weight: 700;
+}
+
+footer div ul {
+    list-style-type: none;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+footer div li {
+    margin-top: 15px;
+}
+
+footer div li:hover {
+   color: var(--secondarycolor);
+}
+
+/* Paramètres pour les écrans avec une largeur inférieure à 576px = smartphone portrait */
+@media screen and (max-width: 575px) {
+    body {
+    }
+
+    h1 {
+        font-size: 1.5rem;
+     }
+    
+     /* HEADER */
+    
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+    }
+
+    header img {
+        width: 40%;
+    }
+    
+    header nav div {
+        align-items: center;
+        margin-top: 3%;
+        flex-direction: column;
+    }
+    
+    header nav a {
+        margin: 10px 0 ;
+    }
+    
+    .burger-label{
+        display: block;
+    }
+    
+    .burger ~ div {
+        transition: transform 1s;
+        overflow: hidden;
+        max-height: 0px;
+      }
+      .burger:checked ~ div {
+        max-height: 200px;
+      }
+      /* HERO */ 
+
+      .hero {
+        height: 40vh;
+      }
+      .hero h1  {
+        width: 90%;
+        margin:auto;
+      }
+      .hero p {
+        font-size: 1rem;
+        width: 90%;
+        margin: 10px auto;
+      }
+      /* MAIN */ 
+
+    main {
+        padding: 0 5%;
+    }
+    aside {
+    display: none !important;
+     }
+    
+    section {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .card img {
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .descriptif {
+        margin: 0;
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .descriptif button {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* FOOTER */ 
+    footer {
+        padding: 2%  5%;
+    }
+
+    .topFooter{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        text-align: center;
+    }
+
+    .topFooter img {
+        width: 40%;
+    }
+
+    footer div{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer div ul {
+     text-align: center;
+    }
+
+  
+}
+/* Paramètres pour les écrans d'une largeur comprise entre à 577px et 960px = tablette ou smartphone paysage */
+@media screen and (min-width: 576px) and (max-width: 960px) {
+ body{
+    background-color: pink;
+ }
+
+ h1 {
+    font-size: 2.5rem;
+ }
+
+
+ /* HEADER */
+
+header {
+    padding: 1% 5%;
+    flex-direction: column;
+}
+
+header nav div {
+    align-items: center;
+    margin-top: 3%;
+    flex-direction: column;
+}
+
+header nav a {
+    margin: 10px 0 ;
+}
+
+.burger-label{
+    display: block;
+}
+
+.burger ~ div {
+    transition: transform 1s;
+    overflow: hidden;
+    max-height: 0px;
+  }
+  .burger:checked ~ div {
+    max-height: 200px;
+  }
+
+  /* MAIN */ 
+ main {
+    padding: 0 5%;
+    flex-direction: column;
+ }
+
+ aside {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+}
